@@ -60,8 +60,12 @@ This is a full-stack blog platform built with React for the frontend and Hono JS
    ```
 
 2. **Install dependencies:**
-   cd backend
-   npm install
+
+```bash
+ cd backend
+ npm install
+```
+
 3. **Set up environment variables:**
    Create a .env file in the backend directory with the following content:
    DATABASE_URL="sqlite:./dev.db"
@@ -69,18 +73,20 @@ This is a full-stack blog platform built with React for the frontend and Hono JS
 4. **Run database migration**
 
 ````bash
-  npx prisma migrate dev --name init
-
+npx prisma migrate dev --name init
+```
 5. **Start the backend serve**
-``bash
+```bash
   npm run dev
-
+```
 ### Frontend Setup
 
 ```bash
 cd frontend
 npm i
 npm run dev
+```
+
 
 
 ````
