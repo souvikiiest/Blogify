@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function ErrorPage({ label }: string) {
+interface ErrorPageProps {
+  label?: string;
+}
+export default function ErrorPage({ label }: ErrorPageProps) {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
