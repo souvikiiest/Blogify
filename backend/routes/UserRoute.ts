@@ -59,13 +59,7 @@ userRoute.post("/signin", async (c) => {
     return c.json({ msg: err });
   }
 });
-userRoute.get("/getalldatails", async (c) => {
-  const prisma = new PrismaClient({
-    datasourceUrl: c.env.DATABASE_URL,
-  }).$extends(withAccelerate());
-  const users = await prisma.user.findMany();
-  return c.json(users);
-});
+
 userRoute.get("/getauthor/:id", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
@@ -77,17 +71,4 @@ userRoute.get("/getauthor/:id", async (c) => {
     },
   });
   return c.json(users);
-});
-userRoute.post("/deleteall", async (c) => {
-  const prisma = new PrismaClient({
-    datasourceUrl: c.env.DATABASE_URL,
-  }).$extends(withAccelerate());
-  try {
-    const res2 = await prisma.post.deleteMany();
-    const res1 = await prisma.user.deleteMany();
-
-    console.log("All deleted");
-  } catch (e) {
-    console.log("some erro occured", e);
-  }
 });

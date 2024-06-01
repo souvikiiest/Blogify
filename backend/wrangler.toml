@@ -20,3 +20,5 @@ compatibility_date = "2023-12-01"
 # [ai]
 # binding = "AI"
 [vars]
+DATABASE_URL=""
+JWT_SECRET = ""
