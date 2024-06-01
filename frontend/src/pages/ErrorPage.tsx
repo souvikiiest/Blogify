@@ -12,7 +12,7 @@ export default function ErrorPage({ label }: ErrorPageProps) {
           {label ? label : "Page Not Found"}
         </p>
         <Link
-          to="/signin"
+          to="/"
           className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
         >
           Go Home
