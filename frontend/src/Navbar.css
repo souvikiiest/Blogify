@@ -1,0 +1,10 @@
+.custom-control {
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+  background-position: 8px center;
+}
+
+.dropdown {
+  width: 200px;
+}

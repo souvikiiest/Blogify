@@ -1,10 +1,36 @@
+import Dropdown, { Option } from "react-dropdown";
+import "react-dropdown/style.css";
 import { Link, useNavigate } from "react-router-dom";
-
+import "../Navbar.css";
 export default function NavBar() {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/");
+  };
+
+  const options = [
+    { value: "add", label: "Add" },
+    { value: "myBlogs", label: "My Blogs" },
+    { value: "logout", label: "Logout" },
+  ];
+  const handleOptions = (option: Option) => {
+    switch (option.value) {
+      case "add": {
+        navigate("/addBlog");
+        break;
+      }
+      case "myBlogs": {
+        navigate("/myblogs");
+        break;
+      }
+      case "logout": {
+        handleLogout();
+        break;
+      }
+      default:
+        break;
+    }
   };
   return (
     <>
@@ -14,26 +40,16 @@ export default function NavBar() {
             {" "}
             <div className="text-2xl font-bold ml-4 ">BLOGIFY</div>{" "}
           </Link>
-          <div>
-            <button
-              onClick={() => navigate("/addBlog")}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 my-1"
-            >
-              Add
-            </button>
-            <button
-              onClick={() => navigate("/myblogs")}
-              className="bg-blue-500 text-white px-4 py-2 mr-2 rounded my-1"
-            >
-              My Blogs
-            </button>
-            <button
-              onClick={handleLogout}
-              className=" bg-red-500 text-white mr-4 px-4 py-2 rounded hover:bg-red-700 transition duration-300"
-            >
-              <i className="fas fa-sign-out-alt mr-2"></i> Logout
-            </button>
-          </div>
+          <Dropdown
+            options={options}
+            onChange={(option: Option) => handleOptions(option)}
+            placeholder="Menu"
+            className="w-[20%] md:w-[10%]"
+            controlClassName="dropdown-control"
+            menuClassName="dropdown-menu"
+            arrowClosed={<span className="arrow-closed" />}
+            arrowOpen={<span className="arrow-open" />}
+          />
         </div>
       </nav>
     </>
