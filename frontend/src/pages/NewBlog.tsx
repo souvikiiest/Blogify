@@ -3,6 +3,11 @@ import NavBar from "../components/Navbar";
 import useBlogForm from "../hooks/useBlogForm";
 import NotAuthPage from "./NotAuth";
 
+interface BlogFormData {
+  title: string;
+  content: string;
+}
+
 export default function NewBlog() {
   const {
     register,
@@ -10,7 +15,7 @@ export default function NewBlog() {
     setValue,
 
     formState: { errors },
-  } = useForm();
+  } = useForm<BlogFormData>();
   const auth = localStorage.getItem("token");
   const { isEditMode, onSubmitHandler, handleDelete } = useBlogForm(setValue);
   if (!auth) return <NotAuthPage />;

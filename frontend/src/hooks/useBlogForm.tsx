@@ -4,7 +4,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { BACKEND_URL } from "../config";
 
-const useBlogForm = (setValue: (name: string, value: any) => void) => {
+interface BlogFormData {
+  title: string;
+  content: string;
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const useBlogForm = (setValue: any) => {
   const navigate = useNavigate();
   const [isEditMode, setIsEditMode] = useState(false);
   const [isDeleteMode, setIsDeleteMode] = useState(false);
@@ -33,7 +38,7 @@ const useBlogForm = (setValue: (name: string, value: any) => void) => {
     }
   }, [id, setValue, isEditMode]);
 
-  async function onSubmitHandler(data: FormData) {
+  async function onSubmitHandler(data: BlogFormData) {
     console.log(data);
     const auth = localStorage.getItem("token");
     let response;
@@ -64,6 +69,7 @@ const useBlogForm = (setValue: (name: string, value: any) => void) => {
         );
         navigate("/blog");
       }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       if (err.response && err.response.data && err.response.data.msg)
         toast.error(err.response.data.msg, {
@@ -92,6 +98,7 @@ const useBlogForm = (setValue: (name: string, value: any) => void) => {
         toast.success("Your Blog was deleted successfully");
         navigate("/blog");
       }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       if (err.response && err.response.data && err.response.data.msg)
         toast.error(err.response.data.msg, {
