@@ -11,8 +11,6 @@ This is a full-stack blog platform built with React for the frontend and Hono JS
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -28,7 +26,7 @@ This is a full-stack blog platform built with React for the frontend and Hono JS
 ### Frontend
 
 - React
-- React Router
+- React Router dom
 - React Hook Form
 - Axios
 - Tailwind CSS
@@ -39,7 +37,7 @@ This is a full-stack blog platform built with React for the frontend and Hono JS
 - Hono JS
 - Cloudflare Workers
 - Prisma (with Accelerate extension)
-- SQLite (or other databases supported by Prisma)
+- PostGres
 
 ## Prerequisites
 
