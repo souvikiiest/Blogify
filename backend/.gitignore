@@ -3,6 +3,7 @@ dist
 specialroute
 .wrangler
 .dev.vars
+.env
 
 # Change them to your taste:
 package-lock.json
