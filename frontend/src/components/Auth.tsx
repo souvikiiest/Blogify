@@ -25,7 +25,7 @@ export const Auth: React.FC<InputType> = ({ type }) => {
         toast.success("Signup successfull, please login !", {
           theme: "light",
         });
-        navigate("/signin");
+        navigate("/");
       } else {
         localStorage.setItem("token", "Bearer " + response.data.jwt);
         navigate("/blog");
@@ -54,10 +54,7 @@ export const Auth: React.FC<InputType> = ({ type }) => {
           {type == "signup"
             ? "Already have an account?"
             : "Donot have an account?"}
-          <Link
-            to={type == "signup" ? "/signin" : "/signup"}
-            className="underline"
-          >
+          <Link to={type == "signup" ? "/" : "/signup"} className="underline">
             {type == "signup" ? "singin" : "signup"}
           </Link>
         </div>
