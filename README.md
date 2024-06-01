@@ -68,7 +68,9 @@ This is a full-stack blog platform built with React for the frontend and Hono JS
 
 3. **Set up environment variables:**
    Create a .env file in the backend directory with the following content:
-   DATABASE_URL="sqlite:./dev.db"
+   DATABASE_URL="your_origina_db_url_postgres"
+   wrangler.toml DATABASE_URL="your_connection_pool_url from prisma accelerate"
+   JWT_SECRET = "Your_JWT_Secret"
 
 4. **Run database migration**
 
