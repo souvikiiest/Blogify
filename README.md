@@ -72,21 +72,19 @@ This is a full-stack blog platform built with React for the frontend and Hono JS
 
 4. **Run database migration**
 
-````bash
-npx prisma migrate dev --name init
-```
+   ```bash
+   npx prisma migrate dev --name init
+   ```
+
 5. **Start the backend serve**
-```bash
-  npm run dev
-```
+   ```bash
+   npm run dev
+   ```
+
 ### Frontend Setup
 
 ```bash
-cd frontend
-npm i
-npm run dev
+  cd frontend
+  npm i
+  npm run dev
 ```
-
-
-
-````
