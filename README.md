@@ -1,6 +1,6 @@
 # Blog Platform
 
-# Live Link:https://blogify-souvikg.vercel.app/
+# Live Link: https://blogify-souvikg.vercel.app/
 
 This is a full-stack blog platform built with React for the frontend and Hono JS with Cloudflare Workers for the backend. It includes functionalities for creating, editing, and deleting blog posts, as well as user authentication.
 
